@@ -41,14 +41,26 @@ class _MyHomePageState extends State<MyHomePage> {
     "Rio de Janeiro",
     "Recife",
     "Sorocaba",
-    "Santa RIta do Sapucaí",
+    "Santa Rita do Sapucaí",
     "Pouso Alegre"
   ];
+
+  List<MaterialColor> cores = [
+    Colors.orange,
+    Colors.blue,
+    Colors.green,
+    Colors.grey,
+    Colors.red,
+    Colors.pink
+  ];
+
   String randomTexto = "";
+  MaterialColor randomCore = Colors.blue;
 
   void _atualizarTela() {
     setState(() {
       randomTexto = locais[new Random().nextInt(locais.length)];
+      randomCore = cores [new Random().nextInt(cores.length)];
     });
   }
 
@@ -65,12 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue, // background
+                primary: randomCore, // background
                 onPrimary: Colors.white, // foreground
               ),
               onPressed: _atualizarTela,
 
-              child: Text('Clique'),
+              child: Text('Clique!'),
             ),
             Text(
               '$randomTexto',
