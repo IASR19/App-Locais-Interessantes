@@ -51,7 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Colors.green,
     Colors.grey,
     Colors.red,
-    Colors.pink
+    Colors.pink,
+    Colors.brown
   ];
 
   String randomTexto = "";
